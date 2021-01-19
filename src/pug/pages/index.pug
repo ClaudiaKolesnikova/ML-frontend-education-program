@@ -1,0 +1,33 @@
+extends ../layout/main
+
+block variables
+  - var title = 'FSD';
+  - var description = ' Description fot Webpack + Pug';
+  - var pageClass = 'index-page';
+
+block content
+  section
+    .container
+      +item('Webpack + Pug h2', 'Text paragraph desc')
+      +item('Webpack + Pug h2', 'Text paragraph desc')
+  section
+    .logo
+    .container
+      h1 Webpack + Pug
+      p Text paragraph
+  section
+    .container
+      h1 Webpack + Pug
+      .card
+        h2 Webpack + Pug h2
+      p Text paragraph
+
+  pre
+
+block script
+  script(type='text/javascript').
+    const foo = true;
+    let bar = function() {};
+    if(foo) {
+      bar(1 + 5)
+    }
