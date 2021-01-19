@@ -1,6 +1,7 @@
 import * as $ from 'jquery';
 import Post from '@models/Post';
-import WebpackLogo from '@/assets/webpack-logo.png'; // здесь можно указать без .png потому что в объекте resolve есть расширение png
+import WebpackLogo from '@/assets/webpack-logo.png';
+// import WebpackLogo from '@/assets/webpack-logo';
 
 import './babel';
 import './styles/styles.css';

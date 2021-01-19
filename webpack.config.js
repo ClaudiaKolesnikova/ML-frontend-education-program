@@ -1,4 +1,4 @@
-const path = require('path'); // встроенный модуль в nodejs
+const path = require('path');
 const fs = require('fs');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
@@ -15,7 +15,7 @@ const PAGES = fs
   .readdirSync(PAGES_DIR)
   .filter(fileName => fileName.endsWith('.pug'));
 
-const optimization = () => { // для оптимизации загрузки файлов, например jquery подключается в нескольких файлах
+const optimization = () => {
   const config = {
     splitChunks: {
       chunks: 'all'
@@ -75,19 +75,14 @@ const jsLoaders = () => {
 
 const plugins = () => {
   const base = [
-    // new HTMLWebpackPlugin({
-    // //   template: './index.html',
-    //       template: `${PAGES_DIR}/${page}`, // .pug
-    //       filename: `./${page.replace(/\.pug/,'.html')}`,
-    //   minify: {
-    //     collapseWhitespace: isProd
-    //   }
-    // }),
     ...PAGES.map(
       page =>
         new HTMLWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`, // .pug
-          filename: `./${page.replace(/\.pug/,'.html')}` // convert pug to html
+          template: `${PAGES_DIR}/${page}`,
+          filename: `./${page.replace(/\.pug/,'.html')}`,
+          minify: {
+            collapseWhitespace: isProd
+          }
         })
     ),
     new CleanWebpackPlugin(),
@@ -95,7 +90,6 @@ const plugins = () => {
       {
         from: path.resolve(__dirname, 'src/favicon.ico'),
         to: path.resolve(__dirname, 'docs')
-        // to: path.resolve(__dirname, 'dist')
       }
     ]),
     new MiniCssExtractPlugin({
@@ -109,13 +103,12 @@ const plugins = () => {
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
-  entry: { // точка входа
+  entry: {
     main: ['@babel/polyfill', './index.js']
   },
-  output: { // куда складывать результат
+  output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'docs')
-    // path: path.resolve(__dirname, 'dist')
   },
   resolve: {
     extensions: ['.js', '.json', '.png'],
@@ -131,7 +124,7 @@ module.exports = {
   },
   devtool: isDev ? 'source-map' : '',
   plugins: plugins(),
-  module: { // позволяет использовать не только js
+  module: {
     rules: [
       {
         test: /\.pug$/,
