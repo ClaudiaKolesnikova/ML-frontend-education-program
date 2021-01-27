@@ -1,0 +1,4 @@
+mixin fontItem(tagName, text, param)
+  .font-item
+    div(class=`font-item__tag-name font-item__tag-name_${param}`)=tagName
+    div(class=`font-item__example-value font-item__example-value_${param}`)=text

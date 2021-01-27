@@ -1,0 +1,57 @@
+.color-item {
+  display: flex;
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.color-item__example {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  margin-right: 40px;
+
+  &_dark-100 {
+    background: $dark-color-100;
+  }
+
+  &_dark-75 {
+    background: $dark-color-75;
+  }
+
+  &_dark-50 {
+    background: $dark-color-50;
+  }
+
+  &_dark-25 {
+    background: $dark-color-25;
+  }
+
+  &_dark-5 {
+    background: $dark-color-5;
+  }
+
+  &_purple {
+    background: $purple-color;
+  }
+
+  &_green {
+    background: $green-color;
+  }
+}
+
+.color-item__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 28px;
+  color: $dark-color-100;
+}
+
+.color-item__value {
+  font-weight: normal;
+}

@@ -1,4 +1,3 @@
-include ../utils/mixins
 block variables
 
 doctype html
@@ -6,16 +5,7 @@ html(lang='en')
   head
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='shortcut icon' href='favicon.ico' type='image/x-icon')
     title #{title}
-    block head
-
-  //- body(class=pageClass)
-  //-   .wrapper
-  //-     include ../includes/modules/header
-  //-     .content-wrapper
-  //-       block content
-  //-     include ../includes/modules/footer
   body
     block content
-
-  block script

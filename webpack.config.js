@@ -113,8 +113,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json', '.png'],
     alias: {
-      '@models': path.resolve(__dirname, 'src/models'),
       '@': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, 'src/pug/components'),
     }
   },
   optimization: optimization(),

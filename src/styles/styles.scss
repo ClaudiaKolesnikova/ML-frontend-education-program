@@ -1,0 +1,35 @@
+@import '~normalize.css'; /* импорт из NodeJs c ~ */
+@import 'montserrat.css';
+@import 'variables.scss';
+@import '../pug/components/colorItem/colorItem.scss';
+@import '../pug/components/fontItem/fontItem.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  // font-style: normal;
+  // font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-color-75;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
+.colors-fonts {
+  display: flex;
+  justify-content: space-between;
+  padding: 145px 158px 145px 150px;
+  max-width: 1920px;
+  min-width: 320px;
+}
