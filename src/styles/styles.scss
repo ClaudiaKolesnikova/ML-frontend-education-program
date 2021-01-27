@@ -12,12 +12,15 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  // font-style: normal;
-  // font-weight: normal;
   font-size: 14px;
   line-height: 24px;
   color: $dark-color-75;
+}
+
+.container {
   position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .logo {
