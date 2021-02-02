@@ -1,0 +1,114 @@
+.select,
+.select-default {
+  position: relative;
+  // max-width: 266px;
+  width: 100%;
+  line-height: 18px;
+  background: #ffffff;
+  border: 1px solid $dark-color-25;
+  border-radius: 4px 4px 0 0;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 14px;
+  padding-right: 9px;
+  color: $dark-color-25;
+  outline: none;
+}
+.select.is-active {
+  border: 1px solid $dark-color-50;
+}
+.select.is-active .select__body {
+  display: block;
+}
+
+.select__header,
+.select__header-default {
+  cursor: pointer;
+  display: flex;
+  max-height: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.select__current,
+.select__current-default {
+  color: $dark-color-75;
+  overflow: hidden;
+  max-width: 160px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.select__icon {
+  color: $dark-color-75;
+  margin-bottom: -1px;
+}
+
+.select__body {
+  border: 1px solid $dark-color-50;
+  border-radius: 0 0 4px 4px;
+  border-top: 0;
+  display: none;
+  left: -1px;
+  position: absolute;
+  right: -1px;
+  top: 100%;
+}
+
+.select__item {
+  padding: 7px 7px 0 15px;
+}
+.select__item:nth-of-type(3) {
+  padding-bottom: 7px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item__count {
+  display: flex;
+  align-items: center;
+}
+
+.item__round {
+  width: 30px;
+  height: 30px;
+  border: 1px solid $dark-color-50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $dark-color-50;
+  cursor: pointer;
+}
+
+.item__number {
+  width: 32px;
+  text-align: center;
+}
+
+.select__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $purple-color;
+}
+
+.select__clear {
+  display: none;
+  padding: 12px 0 13px 14px;
+}
+
+.select__apply {
+  display: none;
+  padding: 12px 7px 13px 0;
+  margin-left: auto;
+}
+
+.select__clear.is-active,
+.select__apply.is-active {
+  display: block;
+  cursor: pointer;
+}

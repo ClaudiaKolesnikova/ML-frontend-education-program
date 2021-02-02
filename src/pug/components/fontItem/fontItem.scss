@@ -26,9 +26,16 @@
   color: $dark-color-100;
 }
 
-.font-item__tag-name_h3,
+.font-item__tag-name_h3 {
+  font-size: 12px;
+  line-height: 15px;
+  color: $dark-color-100;
+  text-transform: uppercase;
+}
+
 .font-item__example-value_h3 {
   font-size: 12px;
+  font-weight: bold;
   line-height: 15px;
   color: $dark-color-100;
   text-transform: uppercase;

@@ -3,6 +3,7 @@
 @import 'variables.scss';
 @import '../pug/components/colorItem/colorItem.scss';
 @import '../pug/components/fontItem/fontItem.scss';
+@import '../pug/components/selectItem/selectItem.scss';
 
 * {
   box-sizing: border-box;
@@ -33,6 +34,67 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 145px 158px 145px 150px;
-  max-width: 1920px;
+  max-width: 1440px;
   min-width: 320px;
+}
+
+.form-elements {
+  padding: 140px 141px 131px 141px;
+  max-width: 1440px;
+  min-width: 320px;
+}
+
+.text-field-default {
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+.text-field-default__label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.input {
+  max-width: 320px;
+  width: 100%;
+  line-height: 18px;
+  background: #ffffff;
+  border: 1px solid $dark-color-25;
+
+  border-radius: 4px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 14px;
+  padding-right: 14px;
+  color: $dark-color-25;
+  outline: none;
+}
+
+.input::-webkit-input-placeholder {
+  color: $dark-color-25;
+}
+.input::-moz-placeholder {
+  color: $dark-color-25;
+}
+
+.font-item__example-value_opacity {
+  color: $dark-color-50;
+}
+
+.input:focus,
+.input:hover,
+.input_focus {
+  color: $dark-color-75;
+  border: 1px solid $dark-color-50;
+}
+
+.text-field-dropdown {
+  max-width: 266px;
+  margin-bottom: 20px;
+}
+
+.text-field-dropdown_wide {
+  max-width: 320px;
+  margin-top: 170px;
 }

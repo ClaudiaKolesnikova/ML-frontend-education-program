@@ -1,0 +1,7 @@
+mixin selectItem(title, count, option)
+  .select__item.item
+    span.item__name.font-item__example-value_h3=title
+    div(class="item__count" data-option=`${option}`)
+      div(class="item__round" data-operation="minus") -
+      .item__number.font-item__example-value_h3=count
+      div(class="item__round" data-operation="plus") +
