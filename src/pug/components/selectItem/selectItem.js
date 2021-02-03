@@ -1,57 +1,47 @@
-let selectRoom = document.querySelector('#roomSelect');
-let selectGuest = document.querySelector('#guestSelect');
+const selectRoom = document.querySelector('#roomSelect');
+const selectGuest = document.querySelector('#guestSelect');
 
-function getElements(select) {
-  let selectHeader = select.querySelector('.select__header');
-  let itemRound = select.querySelectorAll('.item__round');
-  let apply = select.querySelector('.select__apply');
-  let clear = select.querySelector('.select__clear');
-  return {selectHeader, itemRound, apply, clear};
+const roomElements = getElements(selectRoom);
+const guestElements = getElements(selectGuest);
+
+const state = {
+  rooms: {
+    bedroom: 2,
+    bed: 2,
+    bathroom: 0,
+  },
+  guests: {
+    adult: 2,
+    child: 0,
+    infant: 0,
+  }
 }
-
-let roomElements = getElements(selectRoom);
-let guestElements = getElements(selectGuest);
-
-let bedroomNumber = 2;
-let bedNumber = 2;
-let bathroomNumber = 0;
-
-let adultNumber = 2;
-let childrenNumber = 0;
-let infantNumber = 0;
 
 changeCurrentOption();
 
-roomElements.selectHeader.addEventListener('click', selectToggle);
-guestElements.selectHeader.addEventListener('click', selectToggle);
-
 roomElements.itemRound.forEach(item => {
-    item.addEventListener('click', changeNumber)
+  item.addEventListener('click', changeNumber);
 });
 
 guestElements.itemRound.forEach(item => {
-    item.addEventListener('click', changeNumber)
+  item.addEventListener('click', changeNumber);
 });
 
-roomElements.clear.addEventListener('click', clearRoomOptions);
-guestElements.clear.addEventListener('click', clearGuestOptions);
-
-function clearRoomOptions() {
-  let numbers = selectRoom.querySelectorAll('.item__number');
-  numbers.forEach(item => item.innerText = 0);
-
-  bedroomNumber = bedNumber = bathroomNumber = 0;
-
-  hideClearButton(roomElements);
+function getElements(select) {
+  const selectHeader = select.querySelector('.select__header');
+  const itemRound = select.querySelectorAll('.item__round');
+  const apply = select.querySelector('.select__apply');
+  const clear = select.querySelector('.select__clear');
+  return {selectHeader, itemRound, apply, clear};
 }
 
-function clearGuestOptions() {
-  let numbers = selectGuest.querySelectorAll('.item__number');
+function clearNumberOptions(select, state, elements) {
+  const numbers = select.querySelectorAll('.item__number');
   numbers.forEach(item => item.innerText = 0);
 
-  adultNumber = childrenNumber = infantNumber = 0;
+  Object.keys(state).forEach((key) => state[key] = 0);
 
-  hideClearButton(guestElements);
+  hideClearButton(elements);
 }
 
 function showApplyButton(elements) {
@@ -67,77 +57,64 @@ function hideClearButton(elements) {
 }
 
 function selectToggle() {
-    this.parentElement.classList.toggle('is-active');
+  this.parentElement.classList.toggle('is-active');
 }
 
 function changeCurrentOption() {
-  let textCurrentRoom = `${bedroomNumber} спальни, ${bedNumber} кровати, ${bathroomNumber} ванные комнаты`;
-  let currentElemenetRoom = selectRoom.querySelector('.select__current');
+  const textCurrentRoom = `${state.rooms.bedroom} спальни, ${state.rooms.bed} кровати, ${state.rooms.bathroom} ванные комнаты`;
+  const currentElemenetRoom = selectRoom.querySelector('.select__current');
   currentElemenetRoom.innerText = textCurrentRoom;
 
-  let textCurrentGuest = `${adultNumber + childrenNumber} гостя, ${infantNumber} младенец`;
-  if(infantNumber == 0) {
-    textCurrentGuest = `${adultNumber + childrenNumber} гостя`;
+  let textCurrentGuest = `${state.guests.adult + state.guests.child} гостя, ${state.guests.infant} младенец`;
+   if(!Object.values(state.guests).reduce((accum, curr) => accum + curr, 0)) {
+    textCurrentGuest = 'Сколько гостей';
+  } else if(!state.guests.infant) {
+    textCurrentGuest = `${state.guests.adult + state.guests.child} гостя`;
   }
-  let currentElemenetGuest = selectGuest.querySelector('.select__current');
+
+  const currentElemenetGuest = selectGuest.querySelector('.select__current');
   currentElemenetGuest.innerText = textCurrentGuest;
 }
 
 function changeNumber() {
-  let operation = this.dataset.operation;
-  let option = this.parentElement.dataset.option;
-  let currentNumberElem = this.parentElement.querySelector('.item__number');
+  const operation = this.dataset.operation;
+  const dataType = this.parentElement.dataset.datatype;
+  const option = this.parentElement.dataset.option;
+  const currentNumberElem = this.parentElement.querySelector('.item__number');
   let numberValue;
 
   if(operation === "minus") {
-    if(option === "bedroom") {
-      numberValue = bedroomNumber > 0 ? --bedroomNumber : 0;
-    } else if(option === "bed") {
-      numberValue = bedNumber > 0 ? --bedNumber : 0;
-    } else if(option === "bathroom") {
-      numberValue = bathroomNumber > 0 ? --bathroomNumber : 0;
-    } else if(option === "adult") {
-      numberValue = adultNumber > 0 ? --adultNumber : 0;
-    } else if(option === "child") {
-      numberValue = childrenNumber > 0 ? --childrenNumber : 0;
-    } else if(option === "infant") {
-      numberValue = infantNumber > 0 ? --infantNumber : 0;
-    }
+    numberValue = state[dataType][option] ? --state[dataType][option] : 0;
   } else if (operation === "plus") {
-    if(option === "bedroom") {
-      numberValue = ++bedroomNumber;
-    } else if(option === "bed") {
-      numberValue = ++bedNumber;
-    } else if(option === "bathroom") {
-      numberValue = ++bathroomNumber;
-    } else if(option === "adult") {
-      numberValue = ++adultNumber;
-    } else if(option === "child") {
-      numberValue = ++childrenNumber;
-    } else if(option === "infant") {
-      numberValue = ++infantNumber;
-    }
+    numberValue = ++state[dataType][option];
   }
+
   currentNumberElem.innerText = numberValue;
 
-  if(option === "bedroom" || option === "bed" || option === "bathroom") {
+  if(["bedroom", "bed", "bathroom"].includes(option)) {
     showApplyButton(roomElements);
 
-    if(bedroomNumber == 0 && bedNumber == 0 && bathroomNumber == 0) {
-      hideClearButton(roomElements);
-    } else {
+    if(Object.values(state.rooms).reduce((accum, curr) => accum + curr, 0)) {
       showClearButton(roomElements);
-    }
-  } else if(option === "adult" || option === "child" || option === "infant") {
-    showApplyButton(guestElements);
-    
-    if(adultNumber == 0 && childrenNumber == 0 && infantNumber == 0) {
-      hideClearButton(guestElements);
     } else {
+      hideClearButton(roomElements);
+    }
+  } else if(["adult", "child", "infant"].includes(option)) {
+    showApplyButton(guestElements);
+
+    if(Object.values(state.guests).reduce((accum, curr) => accum + curr, 0)) {
       showClearButton(guestElements);
+    } else {
+      hideClearButton(guestElements);
     }
   }
 }
+
+roomElements.selectHeader.addEventListener('click', selectToggle);
+guestElements.selectHeader.addEventListener('click', selectToggle);
+
+roomElements.clear.addEventListener('click', () => clearNumberOptions(selectRoom, state.rooms, roomElements));
+guestElements.clear.addEventListener('click', () => clearNumberOptions(selectGuest, state.guests, guestElements));
 
 roomElements.apply.addEventListener('click', function() {
   changeCurrentOption();

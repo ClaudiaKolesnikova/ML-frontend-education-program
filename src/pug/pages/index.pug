@@ -51,7 +51,7 @@ block content
           label(for="defaultSelect" class="text-field-default__label font-item__example-value_h3")
             span.font-item__example-value Dropdown
             span.font-item__example-value_opacity Default
-          div(name="defaultSelect" id="defaultSelect" class="select-default")
+          div(id="defaultSelect" class="select-default")
             .select__header-default
               span.select__current-default 2 спальни, 2 кровати, 0 ванные комнаты
               .select__icon.material-icons expand_more
@@ -59,30 +59,29 @@ block content
           label(for="roomSelect" class="text-field-default__label font-item__example-value_h3")
             span.font-item__example-value Dropdown
             span.font-item__example-value_opacity expanded
-          div(name="roomSelect" id="roomSelect" class="select is-active")
+          div(id="roomSelect" class="select is-active")
             .select__header
               span.select__current
               .select__icon.material-icons expand_more
             .select__body
-              +selectItem('спальни', '2', 'bedroom')
-              +selectItem('кровати', '2', 'bed')
-              +selectItem('ванные комнаты', '0', 'bathroom')
+              +selectItem({title: 'спальни', count: '2', option: 'bedroom', datatype: 'rooms'})
+              +selectItem({title: 'кровати', count: '2', option: 'bed', datatype: 'rooms'})
+              +selectItem({title: 'ванные комнаты', count: '0', option: 'bathroom', datatype: 'rooms'})
               .select__actions.font-item__example-value_h3
                 .select__clear очистить
                 .select__apply применить
-
         .text-field-dropdown.text-field-dropdown_wide
           label(for="guestSelect" class="text-field-default__label font-item__example-value_h3")
             span.font-item__example-value Dropdown
             span.font-item__example-value_opacity expanded
-          div(name="guestSelect" id="guestSelect" class="select is-active")
+          div(id="guestSelect" class="select is-active")
             .select__header
               span.select__current
               .select__icon.material-icons expand_more
             .select__body
-              +selectItem('взрослые', '2', 'adult')
-              +selectItem('дети', '0', 'child')
-              +selectItem('младенцы', '0', 'infant')
+              +selectItem({title: 'взрослые', count: '2', option: 'adult', datatype: 'guests'})
+              +selectItem({title: 'дети', count: '0', option: 'child', datatype: 'guests'})
+              +selectItem({title: 'младенцы', count: '0', option: 'infant', datatype: 'guests'})
               .select__actions.font-item__example-value_h3
                 .select__clear очистить
                 .select__apply применить
