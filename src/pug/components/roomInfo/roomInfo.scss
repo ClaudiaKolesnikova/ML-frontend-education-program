@@ -1,0 +1,11 @@
+.room-info {
+  max-width: 280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.room-info__item {
+  border-bottom: 1px solid $dark-color-10;
+  padding-top: 23px;
+  padding-bottom: 17px;
+}

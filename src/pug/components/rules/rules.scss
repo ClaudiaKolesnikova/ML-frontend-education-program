@@ -1,0 +1,32 @@
+.rules {
+  max-width: 292px;
+  width: 100%;
+}
+
+.rules__list {
+  list-style: none;
+}
+.rules__title {
+  margin-bottom: 16px;
+}
+.rules__item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.rules__item:last-of-type {
+  margin-bottom: 0;
+}
+
+.rules__item:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: $dark-color-25;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  margin-top: 7px;
+}

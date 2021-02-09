@@ -1,0 +1,19 @@
+.icon_white {
+  color: $white-color;
+}
+.icon_grey {
+  color: $dark-color-25;
+}
+.icon_purple {
+  color: $purple-color;
+}
+.icon_purple-gradient {
+  background: $gradient-purple;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.icon_big {
+  font-size: 48px;
+  line-height: 41px;
+}

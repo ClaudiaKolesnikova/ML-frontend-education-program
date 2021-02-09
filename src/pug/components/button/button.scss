@@ -1,0 +1,65 @@
+.button {
+  padding: 14px 20px 15px 20px;
+  background: $gradient-purple;
+  border-radius: 22px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 15px;
+  position: relative;
+}
+
+.button_border-gradient {
+  position: relative;
+  background: $gradient-purple;
+}
+
+.button_border-gradient::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  border-radius: 24px;
+  background: $white-color;
+  // z-index: 2;
+}
+
+.button_opacity {
+  background: $gradient-purple-opacity-50;
+}
+
+.button__text {
+  color: $white-color;
+}
+
+.button__text_purple {
+  color: $purple-color;
+  z-index: 2;
+}
+
+.button_only-text {
+  background: $white-color;
+  padding: 0;
+}
+
+.button__text-dark {
+  color: $dark-color-50;
+}
+
+.button__icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.button-wide {
+  display: flex;
+}
+
+.buttons {
+  //delete
+  max-width: 320px;
+}

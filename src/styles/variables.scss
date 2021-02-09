@@ -1,7 +1,23 @@
+$white-color: #ffffff;
 $dark-color-100: rgba(31, 32, 65, 1);
 $dark-color-75: rgba(31, 32, 65, 0.75);
 $dark-color-50: rgba(31, 32, 65, 0.5);
+$dark-color-10: rgba(31, 32, 65, 0.1);
 $dark-color-25: rgba(31, 32, 65, 0.25);
 $dark-color-5: rgba(31, 32, 65, 0.05);
-$purple-color: #bc9cff;
-$green-color: #6fcf97;
+$purple-color: rgba(188, 156, 255, 1);
+$purple-color-50: rgba(188, 156, 255, 0.5);
+$violet-color: rgba(139, 164, 249, 1);
+$violet-color-50: rgba(139, 164, 249, 0.5);
+$green-color: rgba(111, 207, 151, 1);
+$green-blue-color: rgba(102, 210, 234, 1);
+
+$gradient-purple: linear-gradient(180deg, $purple-color, $violet-color);
+$gradient-purple-opacity-50: linear-gradient(
+  180deg,
+  $purple-color-50,
+  $violet-color-50
+);
+
+// background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+$gradient-green: linear-gradient(180deg, $green-color, $green-blue-color);

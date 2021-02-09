@@ -4,6 +4,15 @@
 @import '../pug/components/colorItem/colorItem.scss';
 @import '../pug/components/fontItem/fontItem.scss';
 @import '../pug/components/selectItem/selectItem.scss';
+@import '../pug/components/button/button.scss';
+@import '../pug/components/roundButton/roundButton.scss';
+@import '../pug/components/icon/icon.scss';
+@import '../pug/components/roomInfo/roomInfo.scss';
+@import '../pug/components/infoItem/infoItem.scss';
+@import '../pug/components/review/review.scss';
+@import '../pug/components/rules/rules.scss';
+@import '../pug/components/checkbox/checkbox.scss';
+@import '../pug/components/radio/radio.scss';
 
 * {
   box-sizing: border-box;
@@ -47,6 +56,22 @@ body {
 .text-field-default {
   max-width: 320px;
   margin-bottom: 20px;
+}
+
+.text-field-default_subscription {
+  max-width: 267px;
+}
+
+.subscription-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.subscription-input__icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
 }
 
 .text-field-default__label {
@@ -97,4 +122,26 @@ body {
 .text-field-dropdown_wide {
   max-width: 320px;
   margin-top: 170px;
+}
+
+.reviews {
+}
+
+.checkbox-toggle {
+}
+
+.like-buttons {
+  display: flex;
+}
+
+.like-buttons > .like:first-of-type {
+  margin-right: 10px;
+}
+
+.stars {
+  display: flex;
+}
+
+.stars > .star-part:first-of-type {
+  margin-right: 20px;
 }

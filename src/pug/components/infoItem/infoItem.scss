@@ -1,0 +1,16 @@
+.info-item {
+  display: flex;
+  align-items: center;
+}
+.info-item__icon {
+  margin-right: 10px;
+}
+.info-item__text {
+  display: flex;
+  flex-direction: column;
+}
+.info-item__title {
+  font-weight: bold;
+}
+.info-item__description {
+}
