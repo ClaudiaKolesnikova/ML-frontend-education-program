@@ -19,7 +19,7 @@
   margin-bottom: 0;
 }
 
-.rules__item:before {
+.rules__item::before {
   content: '';
   position: absolute;
   width: 10px;

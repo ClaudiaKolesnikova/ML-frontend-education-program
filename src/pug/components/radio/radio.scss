@@ -28,7 +28,7 @@
   color: $dark-color-50;
 }
 
-.radio__label:before {
+.radio__label::before {
   content: '';
   display: block;
   width: 18px;
@@ -43,7 +43,7 @@
   transition: border 0.1s linear;
 }
 
-.radio__label:after {
+.radio__label::after {
   content: '';
   display: block;
   width: 12px;
@@ -63,7 +63,7 @@
   color: $dark-color-75;
 }
 
-.radio__input:checked + .radio__label:before {
+.radio__input:checked + .radio__label::before {
   border-color: $purple-color;
 }
 
