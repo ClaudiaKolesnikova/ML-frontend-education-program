@@ -264,3 +264,20 @@ block content
         .icon_purple-gradient.material-icons star
         .icon_purple-gradient.material-icons star
         .icon_purple-gradient.material-icons star
+
+    .text-field-default
+      label(for="mask" class="text-field-default__label font-item__example-value_h3")
+        span.font-item__example-value masked text field
+      input(type="text" id="mask" placeholder="ДД.ММ.ГГГГ" class="input")
+    .text-field-default
+      label(for="date-start" class="text-field-default__label font-item__example-value_h3")
+        span.font-item__example-value date Dropdown
+      input(type="date" id="date-start" placeholder="ДД.ММ.ГГГГ" class="input input_date-color-dark")
+    .text-field-default
+      label(for="date-end" class="text-field-default__label font-item__example-value_h3")
+        span.font-item__example-value date Dropdown
+      input(type="date" id="date-end" placeholder="ДД.ММ.ГГГГ" class="input input_date-color-dark")
+
+    .datepicker-calendar
+      input(type='text' id="datepicker-arrival")
+      input(type='text' id="datepicker-depature")

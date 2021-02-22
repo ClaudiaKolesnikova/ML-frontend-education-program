@@ -1,0 +1,183 @@
+@import '../pug/components/airDatepicker/datepicker.min.css';
+
+.datepicker {
+  width: 320px;
+  border: 1px solid $dark-color-25;
+  box-shadow: 0px 10px 20px $dark-color-5;
+}
+
+.datepicker--nav {
+  border-bottom: none;
+  padding: 20px;
+}
+
+.datepicker--nav-action {
+  width: auto;
+}
+
+.datepicker--nav-title,
+.datepicker--day-name,
+.datepicker--cell-day,
+.datepicker--button,
+.datepicker--apply {
+  font-family: Montserrat;
+}
+
+.datepicker--nav-title,
+.datepicker--day-name,
+.datepicker--button,
+.datepicker--apply {
+  font-weight: bold;
+}
+
+.datepicker--day-name,
+.datepicker--cell-day,
+.datepicker--button,
+.datepicker--apply {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.datepicker--nav-title {
+  font-size: 19px;
+  color: $dark-color-100;
+  padding: 0;
+}
+
+.datepicker--nav-title i {
+  color: $dark-color-100;
+}
+
+.datepicker-icon {
+  color: $purple-color;
+}
+
+.datepicker--content {
+  padding: 10px 20px 0 20px;
+}
+
+.datepicker--days-names {
+  margin: 0;
+}
+
+.datepicker--day-name {
+  color: $purple-color;
+  padding: 12.5px 6px;
+}
+
+.datepicker--cell {
+  height: 40px;
+  color: $dark-color-50;
+}
+
+.datepicker--cell.-disabled- {
+  color: $dark-color-25;
+}
+
+.datepicker--cell.-current- {
+  font-weight: bold;
+  color: $white-color;
+  background: $gradient-green;
+  border-radius: 22px;
+}
+
+.datepicker--cell.-selected-.-current-,
+.datepicker--cell.-selected- {
+  font-weight: bold;
+  border-radius: 22px;
+  background: $gradient-purple;
+}
+
+.datepicker--cell.-in-range- {
+  background: $gradient-purple-opacity-25;
+  color: $dark-color-50;
+}
+
+.datepicker--cell.-range-from- {
+  position: relative;
+}
+
+.datepicker--cell.-range-from-::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 10px solid transparent;
+  border-top: 10px solid $purple-color-25;
+  border-right: 10px solid $purple-color-25;
+}
+.datepicker--cell.-range-from-::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 10px solid transparent;
+  border-bottom: 10px solid $violet-color-25;
+  border-right: 10px solid $violet-color-25;
+}
+
+.datepicker--cell.-range-to-::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 10px solid transparent;
+  border-top: 10px solid $purple-color-25;
+  border-left: 10px solid $purple-color-25;
+}
+.datepicker--cell.-range-to-::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: 10px solid transparent;
+  border-bottom: 10px solid $violet-color-25;
+  border-left: 10px solid $violet-color-25;
+}
+
+.datepicker--cell-day {
+  font-weight: normal;
+}
+
+.datepicker--cell:hover {
+  border-radius: 50%;
+}
+
+.datepicker--cell.-selected-.-focus- {
+  background: $gradient-purple;
+}
+
+.datepicker--cell.-range-from-.-focus-,
+.datepicker--cell.-range-to-.-focus- {
+  background: $gradient-purple;
+  border: none;
+}
+.datepicker--buttons {
+  border-top: none;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.datepicker--button,
+.datepicker--apply {
+  text-transform: uppercase;
+  color: $purple-color;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex: 1;
+  cursor: pointer;
+}
+
+.datepicker--button:hover {
+  background-color: $white-color;
+  color: $purple-color;
+}
+
+.datepicker--button {
+  justify-content: flex-start;
+}
+
+.datepicker--apply {
+  justify-content: flex-end;
+}

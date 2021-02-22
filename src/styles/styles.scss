@@ -13,6 +13,7 @@
 @import '../pug/components/rules/rules.scss';
 @import '../pug/components/checkbox/checkbox.scss';
 @import '../pug/components/radio/radio.scss';
+@import '../pug/components/airDatepicker/datepicker.scss';
 
 * {
   box-sizing: border-box;
@@ -96,9 +97,14 @@ body {
   outline: none;
 }
 
+.input_date-color-dark {
+  color: $dark-color-75;
+}
+
 .input::-webkit-input-placeholder {
   color: $dark-color-25;
 }
+
 .input::-moz-placeholder {
   color: $dark-color-25;
 }
