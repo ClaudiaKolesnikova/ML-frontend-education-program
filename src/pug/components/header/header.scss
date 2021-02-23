@@ -1,0 +1,65 @@
+.header {
+  background: $white-color;
+  box-shadow: 0px 10px 20px $dark-color-5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 140px;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+
+.header__list {
+  display: flex;
+  list-style: none;
+}
+
+.header__item {
+  margin-right: 20px;
+  cursor: pointer;
+  line-height: 17px;
+  color: $dark-color-50;
+}
+
+.header__item_bold {
+  font-weight: bold;
+  color: $dark-color-75;
+}
+
+.header__button {
+  margin-right: 20px;
+}
+
+.header__item_list {
+  position: relative;
+  margin-right: 44px;
+}
+
+.header__item_list::after {
+  position: absolute;
+  font-family: 'Material Icons';
+  content: 'expand_more';
+  font-size: 24px;
+  line-height: 20px;
+  color: $dark-color-50;
+}
+
+.header__user-name {
+  color: $dark-color-50;
+  line-height: 17px;
+  margin-left: 21px;
+  position: relative;
+}
+
+.header__user-name::before {
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 30px;
+  left: -20px;
+  top: -6px;
+  background: $dark-color-10;
+}

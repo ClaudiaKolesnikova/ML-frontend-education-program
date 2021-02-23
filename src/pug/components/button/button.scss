@@ -55,8 +55,12 @@
   transform: translateY(-50%);
 }
 
-.button-wide {
+.button_wide {
   display: flex;
+}
+
+.button_narrow {
+  padding: 9px 20px 10px 19px;
 }
 
 .buttons {

@@ -1,0 +1,7 @@
+.fa-twitter::before,
+.fa-facebook-square::before,
+.fa-instagram::before {
+  background: $gradient-purple;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

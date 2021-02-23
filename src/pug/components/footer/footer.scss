@@ -1,0 +1,78 @@
+.footer-top {
+  box-shadow: 0px 1px 0px $dark-color-10;
+  margin-bottom: 1px;
+  display: flex;
+  justify-content: space-between;
+  padding: 104px 140px 100px 140px;
+  background: $white-color;
+}
+
+.footer-bottom {
+  box-shadow: 0px 10px 20px $dark-color-5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 140px 23px 140px;
+  background: $white-color;
+}
+
+.footer-top__logo {
+  max-width: 260px;
+  margin-top: -4px;
+}
+
+.footer-top__logo-name {
+  margin-bottom: 13px;
+}
+
+.footer-top__subscription {
+  max-width: 260px;
+}
+
+.footer-top__list {
+  list-style: none;
+}
+
+.footer-top__title {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $dark-color-100;
+  margin-bottom: 21px;
+}
+
+.footer-top__item {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: $dark-color-50;
+  text-transform: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.footer-top__item:last-of-type {
+  margin-bottom: 0;
+}
+
+.footer-top__item.footer-top__item_subscription {
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.footer-bottom__copyright {
+  line-height: 17px;
+}
+
+.footer-bottom__icons {
+  font-size: 24px;
+}
+
+.footer-bottom__icon {
+  margin-right: 20px;
+}
+
+.footer-bottom__icon:last-of-type {
+  margin-right: 0;
+}
