@@ -19,6 +19,7 @@
 @import '../pug/components/copyright/copyright.scss';
 @import '../pug/components/header/header.scss';
 @import '../pug/components/footer/footer.scss';
+@import '../pug/components/rangePriceSlider/rangePriceSlider.scss';
 
 * {
   box-sizing: border-box;
@@ -88,6 +89,10 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
+}
+
+.text-field-default__label_margin {
+  margin-bottom: 20.4px;
 }
 
 .input {
@@ -176,4 +181,8 @@ body {
 
 .example-invisible {
   display: none;
+}
+
+.ui-kit__price-slider {
+  margin-bottom: 40.5px;
 }
