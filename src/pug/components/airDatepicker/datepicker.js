@@ -3,6 +3,10 @@ import './datepicker.min.js';
 const datepickerArrival = $('#datepicker-arrival').datepicker().data('datepicker');
 const datepickerDepature = $('#datepicker-depature')[0];
 
+const arrivalInput = $('#arrival-input')[0];
+const depatureInput = $('#depature-input')[0];
+
+
 $('#datepicker-arrival').datepicker({
   minDate: new Date(),
   range: true,
@@ -53,6 +57,10 @@ function replaceNavArrows() {
   nextNavButton.children().first().replaceWith(nextButton);
 }
 
-datepickerDepature.addEventListener('click', () => {
+arrivalInput.addEventListener('click', () => {
+  datepickerArrival.show();
+});
+
+depatureInput.addEventListener('click', () => {
   datepickerArrival.show();
 });

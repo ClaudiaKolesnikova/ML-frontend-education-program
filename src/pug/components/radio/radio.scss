@@ -1,14 +1,14 @@
-.radio-elements {
+.radio__list {
   display: flex;
 }
 
-.radio-item {
+.radio__element {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.radio-item:first-of-type {
+.radio__element:first-of-type {
   margin-right: 20px;
 }
 

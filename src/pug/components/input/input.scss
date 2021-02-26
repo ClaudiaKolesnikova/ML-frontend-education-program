@@ -1,0 +1,42 @@
+.input {
+  max-width: 320px;
+  width: 100%;
+  line-height: 18px;
+  background: #ffffff;
+  border: 1px solid $dark-color-25;
+
+  border-radius: 4px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 14px;
+  padding-right: 14px;
+  color: $dark-color-25;
+  outline: none;
+}
+
+.input_color-dark {
+  color: $dark-color-75;
+}
+
+.input::-webkit-input-placeholder {
+  color: $dark-color-25;
+}
+
+.input::-moz-placeholder {
+  color: $dark-color-25;
+}
+
+.input_color-dark::-webkit-input-placeholder {
+  color: $dark-color-75;
+}
+
+.input_color-dark::-moz-placeholder {
+  color: $dark-color-75;
+}
+
+.input:focus,
+.input:hover,
+.input_focus {
+  color: $dark-color-75;
+  border: 1px solid $dark-color-50;
+}

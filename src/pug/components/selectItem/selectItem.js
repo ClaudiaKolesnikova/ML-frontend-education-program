@@ -108,6 +108,7 @@ function changeNumber() {
       hideClearButton(guestElements);
     }
   }
+  changeCurrentOption();
 }
 
 roomElements.selectHeader.addEventListener('click', selectToggle);

@@ -1,7 +1,5 @@
-.select,
-.select-default {
+.select {
   position: relative;
-  // max-width: 266px;
   width: 100%;
   line-height: 18px;
   background: #ffffff;
@@ -37,10 +35,6 @@
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-.select__icon {
-  color: $dark-color-75;
-  margin-bottom: -1px;
 }
 
 .select__body {

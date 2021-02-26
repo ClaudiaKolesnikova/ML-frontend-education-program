@@ -33,53 +33,7 @@
   display: flex;
 }
 
-.review__like {
-  display: flex;
-  align-items: center;
-  max-width: 40px;
-  width: 100%;
-  height: 20px;
-  border-radius: 10px;
-}
-
 .review__like_position {
   margin-left: 4px;
   margin-right: 14px;
-}
-
-.like_border-gradient {
-  position: relative;
-  background: $gradient-purple;
-}
-
-.like_border-gradient::before {
-  content: '';
-  position: absolute;
-  top: 1px;
-  bottom: 1px;
-  left: 1px;
-  right: 1px;
-  border-radius: 10px;
-  background: $white-color;
-}
-
-.like_border-grey {
-  position: relative;
-  border: 1px solid $dark-color-25;
-}
-
-.review__heart-icon {
-  padding: 5px;
-  font-size: 10px;
-  z-index: 1;
-}
-
-.review__heart-count {
-  color: $purple-color;
-  font-size: 10px;
-  z-index: 1;
-}
-
-.review__heart-count_grey {
-  color: $dark-color-25;
 }

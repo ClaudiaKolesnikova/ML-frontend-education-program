@@ -1,0 +1,26 @@
+.pagination__title {
+  margin-bottom: 16px;
+}
+
+.pagination__wrapper-buttons {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.pagination__button {
+  width: 40px;
+  height: 40px;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pagination__button_purple {
+  background: $gradient-purple;
+}
+
+.pagination__button_green {
+  background: $gradient-green;
+}

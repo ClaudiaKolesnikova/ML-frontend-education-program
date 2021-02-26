@@ -4,14 +4,16 @@
 @import '../pug/components/colorItem/colorItem.scss';
 @import '../pug/components/fontItem/fontItem.scss';
 @import '../pug/components/selectItem/selectItem.scss';
+@import '../pug/components/input/input.scss';
 @import '../pug/components/button/button.scss';
-@import '../pug/components/roundButton/roundButton.scss';
+@import '../pug/components/pagination/pagination.scss';
 @import '../pug/components/icon/icon.scss';
 @import '../pug/components/roomInfo/roomInfo.scss';
-@import '../pug/components/infoItem/infoItem.scss';
 @import '../pug/components/review/review.scss';
 @import '../pug/components/rules/rules.scss';
 @import '../pug/components/checkbox/checkbox.scss';
+@import '../pug/components/toggleButton/toggleButton.scss';
+@import '../pug/components/likeButton/likeButton.scss';
 @import '../pug/components/radio/radio.scss';
 @import '../pug/components/airDatepicker/datepicker.scss';
 @import '../pug/components/fontawesome/css/all.min.css';
@@ -64,13 +66,82 @@ body {
   min-width: 320px;
 }
 
-.text-field-default {
-  max-width: 320px;
-  margin-bottom: 20px;
+.form-elments__part1,
+.form-elments__part2,
+.form-elments__part3 {
+  display: flex;
+  justify-content: space-between;
 }
 
-.text-field-default_subscription {
-  max-width: 267px;
+.form-elments__part1,
+.form-elments__part2 {
+  margin-bottom: 100px;
+}
+
+.input-field {
+  width: 320px;
+
+  .input-field__default {
+    margin-bottom: 20.4px;
+  }
+
+  .input-field__focus {
+    margin-bottom: 20px;
+  }
+
+  .input-field__dropdown-guest {
+    margin-bottom: 22.6px;
+  }
+
+  .input-field__masked {
+    margin-bottom: 40px;
+  }
+
+  .input-field__datepicker-calendar {
+    margin-bottom: 40.5px;
+  }
+
+  .input-field__filter-date {
+    margin-bottom: 40.6px;
+  }
+
+  .input-field__subscription {
+    margin-bottom: 0;
+  }
+}
+
+.form-field__label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.form-field_width-320 {
+  max-width: 320px;
+}
+
+.form-field_width-266 {
+  max-width: 266px;
+}
+
+.datepicker-calendar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.datepicker-calendar__element {
+  max-width: 150px;
+}
+
+.dropdown-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-input__icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
 }
 
 .subscription-input {
@@ -85,85 +156,99 @@ body {
   cursor: pointer;
 }
 
-.text-field-default__label {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
+.checkbox-radio-field {
+  width: 320px;
 }
 
-.text-field-default__label_margin {
-  margin-bottom: 20.4px;
+.checkbox-radio-field__checkbox {
+  margin-bottom: 40.9px;
 }
 
-.input {
-  max-width: 320px;
-  width: 100%;
-  line-height: 18px;
-  background: #ffffff;
-  border: 1px solid $dark-color-25;
-
-  border-radius: 4px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 14px;
-  padding-right: 14px;
-  color: $dark-color-25;
-  outline: none;
+.checkbox-radio-field__radio {
+  margin-bottom: 36.6px;
 }
 
-.input_date-color-dark {
-  color: $dark-color-75;
+.checkbox-radio-field__toggle {
+  margin-bottom: 40.4px;
 }
 
-.input::-webkit-input-placeholder {
-  color: $dark-color-25;
+.checkbox-radio-field__like-buttons {
+  margin-bottom: 40px;
 }
 
-.input::-moz-placeholder {
-  color: $dark-color-25;
+.checkbox-radio-field__toggle-item {
+  margin-bottom: 10px;
 }
 
-.font-item__example-value_opacity {
-  color: $dark-color-50;
+.button-field {
+  width: 320px;
 }
 
-.input:focus,
-.input:hover,
-.input_focus {
-  color: $dark-color-75;
-  border: 1px solid $dark-color-50;
+.button-field__price-slider {
+  margin-bottom: 40.5px;
 }
 
-.text-field-dropdown {
-  max-width: 266px;
-  margin-bottom: 20px;
+.button-field__buttons {
+  margin-bottom: 40px;
 }
 
-.text-field-dropdown_wide {
-  max-width: 320px;
-  margin-top: 170px;
+.buttons__title {
+  margin-bottom: 16px;
 }
 
-.reviews {
+.buttons__position {
+  margin-right: 20px;
+  margin-bottom: 30px;
 }
 
-.checkbox-toggle {
+.dropdown-list__part1,
+.dropdown-list__part2,
+.dropdown-list__part3,
+.form-elments__room-info {
+  width: 320px;
 }
 
 .like-buttons {
-  display: flex;
+  .like-buttons__title {
+    margin-bottom: 16px;
+  }
+
+  .like-buttons__wrapper {
+    display: flex;
+  }
+
+  .like-buttons__wrapper > .like:first-of-type {
+    margin-right: 10px;
+  }
 }
 
-.like-buttons > .like:first-of-type {
-  margin-right: 10px;
+.rate {
+  .rate__title {
+    margin-bottom: 16px;
+  }
+
+  .rate__wrapper {
+    display: inline-block;
+  }
+
+  .rate__wrapper:nth-of-type(2) {
+    margin-right: 20px;
+  }
 }
 
-.stars {
-  display: flex;
+.form-elments__reviews {
+  margin-top: 33px;
 }
 
-.stars > .star-part:first-of-type {
-  margin-right: 20px;
+.dropdown-list__dropdown-expanded {
+  margin-bottom: 173px;
+}
+.dropdown-list__part2 .dropdown-list__dropdown-expanded,
+.dropdown-list__part3 .dropdown-list__dropdown-expanded {
+  margin-bottom: 257px;
+}
+.dropdown-list__dropdown-default {
+  margin-bottom: 20px;
 }
 
 .headers-footers {
@@ -181,8 +266,4 @@ body {
 
 .example-invisible {
   display: none;
-}
-
-.ui-kit__price-slider {
-  margin-bottom: 40.5px;
 }

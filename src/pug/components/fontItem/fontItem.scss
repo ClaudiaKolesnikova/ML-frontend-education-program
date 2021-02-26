@@ -12,15 +12,22 @@
   }
 }
 
+.font-item__example-value {
+  max-width: 369px;
+}
+
+.font-narrow {
+  max-width: 305px;
+}
 .font-item__tag-name_h1,
-.font-item__example-value_h1 {
+.font-h1 {
   font-size: 24px;
   line-height: 29px;
   color: $dark-color-100;
 }
 
 .font-item__tag-name_h2,
-.font-item__example-value_h2 {
+.font-h2 {
   font-size: 19px;
   line-height: 23px;
   color: $dark-color-100;
@@ -33,12 +40,21 @@
   text-transform: uppercase;
 }
 
-.font-item__example-value_h3 {
-  font-size: 12px;
+.font-h1,
+.font-h2,
+.font-h3 {
   font-weight: bold;
+}
+
+.font-h3 {
+  font-size: 12px;
   line-height: 15px;
   color: $dark-color-100;
   text-transform: uppercase;
+}
+
+.font-h3 span:nth-of-type(2) {
+  color: $dark-color-50;
 }
 
 .font-item__tag-name {
@@ -50,14 +66,4 @@
 
 .font-item__tag-name:last-of-type {
   margin-bottom: 0;
-}
-
-.font-item__example-value {
-  font-weight: bold;
-  max-width: 369px;
-}
-
-.font-item__example-value_narrow {
-  max-width: 305px;
-  font-weight: normal;
 }

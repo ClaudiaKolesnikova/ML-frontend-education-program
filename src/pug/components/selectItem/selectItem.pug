@@ -1,7 +1,7 @@
 mixin selectItem(options)
   .select__item.item
-    span.item__name.font-item__example-value_h3= options.title
+    span.item__name.font-h3= options.title
     div(class="item__count" data-option=`${options.option}` data-datatype=`${options.datatype}`)
       div(class="item__round" data-operation="minus") -
-      .item__number.font-item__example-value_h3= options.count
+      .item__number.font-h3= options.count
       div(class="item__round" data-operation="plus") +

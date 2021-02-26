@@ -1,14 +1,14 @@
-const expandableCheckboxList = document.querySelector('.expandable-checkbox-list');
-const checkboxTitle = expandableCheckboxList.querySelector('.checkbox-title');
-const checkboxIcon = expandableCheckboxList.querySelector('.checkbox-title__icon');
-const checkboxList = expandableCheckboxList.querySelector('.checkbox-list');
+const expandableCheckboxList = document.querySelector('.checkbox_expanded');
+const checkboxTitle = expandableCheckboxList.querySelector('.checkbox__title');
+const checkboxIcon = expandableCheckboxList.querySelector('.icon_expanded');
+const checkboxList = expandableCheckboxList.querySelector('.checkbox__list');
 
 checkboxTitle.addEventListener('click', () => {
-  if(checkboxIcon.classList.contains('checkbox-title__icon_expanded')) { 
-    checkboxIcon.classList.remove('checkbox-title__icon_expanded');
+  if(checkboxIcon.classList.contains('icon_expanded')) { 
+    checkboxIcon.classList.remove('icon_expanded');
     checkboxList.style.display = 'none';
   } else {
-    checkboxIcon.classList.add('checkbox-title__icon_expanded');
+    checkboxIcon.classList.add('icon_expanded');
     checkboxList.style.display = 'block'
   }
 });

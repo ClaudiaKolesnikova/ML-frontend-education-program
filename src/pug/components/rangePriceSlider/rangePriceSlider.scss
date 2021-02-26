@@ -4,6 +4,13 @@
   max-width: 266px;
 }
 
+.price-slider__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .price-slider__amount {
   font-weight: normal;
   color: $dark-color-50;
