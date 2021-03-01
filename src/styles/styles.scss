@@ -22,6 +22,7 @@
 @import '../pug/components/header/header.scss';
 @import '../pug/components/footer/footer.scss';
 @import '../pug/components/rangePriceSlider/rangePriceSlider.scss';
+@import '../pug/components/uiKitLogo/uiKitLogo.scss';
 
 * {
   box-sizing: border-box;
@@ -44,12 +45,6 @@ body {
 
 .container_backgroung-grey {
   background-color: $grey-color;
-}
-
-.logo {
-  position: absolute;
-  left: 30px;
-  top: 30px;
 }
 
 .colors-fonts {
