@@ -1,0 +1,34 @@
+mixin cardRoom(options)
+  .card-room
+    .card-room__photo
+      .icon.icon_white.material-icons.card-room__icon.card-room__icon_left expand_more
+      img(class="card-room__image" src=`${options.imageSrc}`)
+      .icon.icon_white.material-icons.card-room__icon.card-room__icon_right expand_more
+      .card-room__more-photo
+        .card-room__round.card-room__round_fill
+        .card-room__round.card-room__round_border
+        .card-room__round.card-room__round_border
+        .card-room__round.card-room__round_border
+    .card-room__info
+      .card-room__title
+        .card-room__number
+          span.card-room__number-icon № 
+          span.font-h2= options.number
+        .card-room__type= options.type
+        .card-room__price-per-day
+          b= `${options.pricePerDay} `
+          span в сутки
+      .card-info__rate
+        .rate
+          .rate__wrapper
+            - var starNumber = +options.rateNumber
+            - var starBorderNumber = 5 - starNumber
+            while starNumber > 0
+              .icon_purple-gradient.material-icons star
+              - starNumber--
+            while starBorderNumber > 0
+              .icon_purple-gradient.material-icons star_border
+              - starBorderNumber--
+        .card-info__review
+          b= `${options.reviewNumber} `
+          span Отзывов

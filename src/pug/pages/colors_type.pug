@@ -1,0 +1,25 @@
+extends ../layout/main
+include ../components/colorItem/colorItem
+include ../components/fontItem/fontItem
+include ../components/uiKitLogo/uiKitLogo
+
+block variables
+  - var title = 'Colors &amp; Type';
+
+block content
+  .container
+    +uiKitLogo
+    section.colors-fonts
+      .colors
+        +colorItem('Dark Shade 100%', '#1F2041', 'dark-100')
+        +colorItem('Dark Shade 75%', '#1F2041', 'dark-75')
+        +colorItem('Dark Shade 50%', '#1F2041', 'dark-50')
+        +colorItem('Dark Shade 25%', '#1F2041', 'dark-25')
+        +colorItem('Dark Shade 5%', '#1F2041', 'dark-5')
+        +colorItem('Purple', '#BC9CFF', 'purple')
+        +colorItem('Green', '#6FCF97', 'green')
+      .fonts-size
+        +fontItem('H1', 'This one is the sub-section or widget title', 'h1')
+        +fontItem('H2', 'Next one is the item title inside widgets', 'h2')
+        +fontItem('H3', 'This is a label or CTA text', 'h3')
+        +fontItem('Body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', 'narrow')

@@ -5,10 +5,19 @@ const datepickerDepature = $('#datepicker-depature')[0];
 
 const arrivalInput = $('#arrival-input')[0];
 const depatureInput = $('#depature-input')[0];
+const parentCard = $('.card-room-reservation')[0];
 
+
+window.addEventListener('load', () => {
+  const datepickersContainer = $('#datepickers-container')[0];
+  if(parentCard) {
+    parentCard.append(datepickersContainer);
+
+    arrivalInput.click();
+  }
+})
 
 $('#datepicker-arrival').datepicker({
-  minDate: new Date(),
   range: true,
   clearButton: true,
   navTitles: {
@@ -29,6 +38,16 @@ function openCalendar() {
   $('.datepicker--buttons').on('click', '#datepicker-apply', () => datepickerArrival.hide());
 
   replaceNavArrows();
+
+  if(parentCard) {
+    const datepickerCalendar = $('.datepicker.active')[0];
+    datepickerCalendar.style.left = '419px';
+    datepickerCalendar.style.top = '-1px';
+
+    const date1 = new Date('2019-08-19');
+    const date2 = new Date('2019-08-23');
+    datepickerArrival.selectDate([date1,date2]);
+  }
 }
 
 function selectDate() {

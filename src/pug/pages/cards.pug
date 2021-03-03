@@ -1,0 +1,146 @@
+extends ../layout/main
+include ../components/colorItem/colorItem
+include ../components/fontItem/fontItem
+include ../components/selectItem/selectItem
+include ../components/uiKitLogo/uiKitLogo
+include ../components/cardRoom/cardRoom
+
+block variables
+  - var title = 'Cards';
+
+block content
+  .container.container_backgroung-grey
+    +uiKitLogo
+    section.cards
+      .cards__block1
+        .card-find-room.cards__element
+          .font-h1.card-find-room__title Найдём номера под ваши пожелания
+          .form-field.form-field_width-320.datepicker-calendar.card-find-room__datepicker
+            .datepicker-calendar__element
+              label(class="form-field__label font-h3")
+                span прибытие
+              .dropdown-input
+                input(type="text" placeholder="ДД.ММ.ГГГГ" class="input input_color-dark")
+                span.dropdown-input__icon.material-icons.icon.icon_grey expand_more
+            .datepicker-calendar__element
+              label(class="form-field__label font-h3")
+                span выезд
+              .dropdown-input
+                input(type="text" placeholder="ДД.ММ.ГГГГ" class="input input_color-dark")
+                span.material-icons.dropdown-input__icon.icon.icon_grey expand_more
+          .form-field.form-field_width-320.card-find-room__guests
+            .form-field__label.font-h3
+              span Гости
+            .select
+              .select__header-default
+                span.select__current-default Сколько гостей
+                .icon.icon_grey.material-icons expand_more
+          .button.button_wide
+              span.button__text.font-h3 подобрать номер
+              span.icon.button__icon.icon_white.material-icons arrow_forward
+        
+        .card-registration.cards__element
+          .font-h1.card-registration__title Регистрация аккаунта
+          .form-field.form-field_width-320.card-registration__name
+            input(type="text" id="name" placeholder="Имя" class="input")
+          .form-field.form-field_width-320.card-registration__last-name
+            input(type="text" id="lastName" placeholder="Фамилия" class="input")
+          .radio.card-registration__radio
+            .radio__list
+              .radio__element
+                input(class="radio__input" name="sex" type="radio" id="male" checked)
+                label(class="radio__label" for="male") Мужчина
+              .radio__element
+                input(class="radio__input" name="sex" type="radio" id="female")
+                label(class="radio__label" for="female") Женщина
+          .form-field.form-field_width-320.card-registration__birth
+            label(for="mask" class="form-field__label font-h3")
+              span дата рождения
+            input(type="text" id="mask" placeholder="ДД.ММ.ГГГГ" class="input")
+          .form-field.form-field_width-320.card-registration__email
+            label(for="default" class="form-field__label font-h3")
+              span данные для входа в сервис
+            input(type="text" id="email" placeholder="Email" class="input")
+          .form-field.form-field_width-320.card-registration__password
+            input(type="password" id="password" placeholder="Пароль" class="input")
+          .toggle-button.card-registration__special-offer
+            .toggle-button__item.checkbox-radio-field__toggle-item
+              input(class="toggle-button__input" type="checkbox" id="specialOffer")
+              label(class="toggle-button__label" for="specialOffer") Получать спецпредложения
+          .button.button_wide.card-registration__button
+            span.button__text.font-h3 перейти к оплате
+            span.icon.button__icon.icon_white.material-icons arrow_forward
+          .card-registration__account
+            .card-registration__account-text Уже есть аккаунт на Toxin
+            .button.button_border-gradient
+              span.button__text.button__text_purple.font-h3 войти
+      
+      .cards__block2
+        .card-room-reservation.cards__element
+          .card-room-reservation__title
+            .card-room-reservation__number
+              span.card-room-reservation__number-icon № 
+              span.font-h1 888
+            .card-room-reservation__type люкс
+            .card-room-reservation__price-per-day
+              b 9 990₽ 
+              span в сутки
+          .form-field.form-field_width-320.datepicker-calendar.card-room-reservation__datepicker
+            .datepicker-calendar__element
+              label(for="datepicker-arrival" class="form-field__label font-h3")
+                span date Dropdown
+              .dropdown-input(id="arrival-input")
+                input(type="text" id="datepicker-arrival" placeholder="ДД.ММ.ГГГГ" class="input input_color-dark" data-position="bottom left")
+                span.dropdown-input__icon.material-icons.icon.icon_grey expand_more
+            .datepicker-calendar__element
+              label(for="datepicker-depature" class="form-field__label font-h3")
+                span date Dropdown
+              .dropdown-input(id="depature-input")
+                input(type="text" id="datepicker-depature" placeholder="ДД.ММ.ГГГГ" class="input input_color-dark")
+                span.material-icons.dropdown-input__icon.icon.icon_grey expand_more
+          .form-field.form-field_width-320.card-room-reservation__guests
+            .form-field__label.font-h3
+              span Гости
+            .select
+              .select__header-default
+                span.select__current-default Сколько гостей
+                .icon.icon_grey.material-icons expand_more
+          table.card-room-reservation__price-table
+            tr.card-room-reservation__price-element
+              td.card-room-reservation__price-text 9 990₽ х 4 суток
+              td
+              td.card-room-reservation__price-count 39 960₽
+            tr.card-room-reservation__price-element
+              td.card-room-reservation__price-text Сбор за услуги: скидка 2 179₽
+              td.card-room-reservation__info-icon i
+              td.card-room-reservation__price-count 0₽
+            tr.card-room-reservation__price-element
+              td.card-room-reservation__price-text Сбор за дополнительные услуги
+              td.card-room-reservation__info-icon i
+              td.card-room-reservation__price-count 300₽
+          .card-room-reservation__price-total.font-h2
+            span Итого
+            .card-room-reservation__dashed
+            span 38 081₽
+          .button.button_wide
+              span.button__text.font-h3 забронировать
+              span.icon.button__icon.icon_white.material-icons arrow_forward
+        
+        .card-entrence.cards__element
+          .font-h1.card-entrence__title Войти
+          .form-field.form-field_width-320.card-entrence__email
+            input(type="text" placeholder="Email" class="input")
+          .form-field.form-field_width-320.card-entrence__password
+            input(type="password" placeholder="Пароль" class="input")
+          .button.button_wide.card-entrence__button
+            span.button__text.font-h3 войти
+            span.icon.button__icon.icon_white.material-icons arrow_forward
+          .card-entrence__account
+            .card-entrence__account-text Нет аккаунта на Toxin?
+            .button.button_border-gradient
+              span.button__text.button__text_purple.font-h3 создать
+      
+      .cards__block3
+        +cardRoom({imageSrc: '/src/pug/components/cardRoom/images/room1.jpg', number: '888', type: 'люкс', pricePerDay: '9 990₽', rateNumber: '5', reviewNumber: '145'}) 
+        .cards__element
+        +cardRoom({imageSrc: '/src/pug/components/cardRoom/images/room2.jpg', number: '840', type: '', pricePerDay: '9 990₽', rateNumber: '4', reviewNumber: '65'})

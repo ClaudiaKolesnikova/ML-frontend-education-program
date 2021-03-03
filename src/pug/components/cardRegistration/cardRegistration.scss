@@ -1,0 +1,55 @@
+.card-registration {
+  background: $white-color;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  max-width: 380px;
+  padding: 40px 29px 30px 29px;
+}
+
+.card-registration__title {
+  margin-bottom: 20px;
+}
+
+.card-registration__name {
+  margin-bottom: 10px;
+}
+
+.card-registration__last-name {
+  margin-bottom: 10px;
+}
+
+.card-registration__radio {
+  margin-bottom: 19.6px;
+}
+
+.card-registration__birth {
+  margin-bottom: 20px;
+}
+
+.card-registration__email {
+  margin-bottom: 10px;
+}
+
+.card-registration__password {
+  margin-bottom: 10px;
+}
+
+.card-registration__special-offer {
+  margin-bottom: 20px;
+}
+
+.card-registration__button {
+  margin-bottom: 30px;
+}
+
+.card-registration__account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-registration__account-text {
+  line-height: 18px;
+  color: #000000;
+}

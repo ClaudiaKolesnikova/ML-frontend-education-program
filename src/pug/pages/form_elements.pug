@@ -1,0 +1,328 @@
+extends ../layout/main
+include ../components/selectItem/selectItem
+include ../components/uiKitLogo/uiKitLogo
+
+block variables
+  - var title = 'Form elements';
+
+block content
+  .container
+    +uiKitLogo
+    section.form-elements
+      .form-elments__part1
+
+        .input-field
+          .form-field.form-field_width-320.input-field__default
+            label(for="default" class="form-field__label font-h3")
+              span Text Field
+              span Default
+            input(type="text" id="default" placeholder="Email" class="input")
+
+          .form-field.form-field_width-320.input-field__focus
+            label(for="hoverFocus" class="form-field__label font-h3")
+              span Text Field
+              span Hover / Focus
+            input(type="text" id="hoverFocus" placeholder="Email" class="input input_focus" value="This is pretty awesome")
+
+          .form-field.form-field_width-320.input-field__dropdown-guest
+            .form-field__label.font-h3
+              span Dropdown
+              span expanded
+            .select
+              .select__header-default
+                span.select__current-default Сколько гостей
+                .icon.icon_grey.material-icons expand_more
+
+          .form-field.form-field_width-320.input-field__masked
+            label(for="mask" class="form-field__label font-h3")
+              span masked text field
+            input(type="text" id="mask" placeholder="ДД.ММ.ГГГГ" class="input")
+
+          .form-field.form-field_width-320.datepicker-calendar.input-field__datepicker-calendar
+            .datepicker-calendar__element
+              label(for="datepicker-arrival" class="form-field__label font-h3")
+                span date Dropdown
+              .dropdown-input(id="arrival-input")
+                input(type="text" id="datepicker-arrival" placeholder="ДД.ММ.ГГГГ" class="input input_color-dark")
+                span.dropdown-input__icon.material-icons.icon.icon_grey expand_more
+            .datepicker-calendar__element
+              label(for="datepicker-depature" class="form-field__label font-h3")
+                span date Dropdown
+              .dropdown-input(id="depature-input")
+                input(type="text" id="datepicker-depature" placeholder="ДД.ММ.ГГГГ" class="input input_color-dark")
+                span.material-icons.dropdown-input__icon.icon.icon_grey expand_more
+
+          .form-field.form-field_width-266.input-field__filter-date
+            label(for="filter-date" class="form-field__label font-h3")
+              span filter date dropdown
+            .dropdown-input
+              input(type="email" id="filter-date" class="input input_color-dark" value="19 авг - 23 авг")
+              span.dropdown-input__icon.material-icons.icon.icon_grey expand_more
+
+          .form-field.form-field_width-266.input-field__subscription
+            label(for="default" class="form-field__label font-h3")
+              span subscription text field
+            .subscription-input
+              input(type="email" id="default" placeholder="Email" class="input")
+              span.icon.icon_purple.subscription-input__icon.material-icons arrow_forward
+
+        .checkbox-radio-field
+
+          .checkbox.checkbox-radio-field__checkbox
+            .checkbox__title.checkbox__title_default.font-h3
+              span Checkbox Buttons
+            .checkbox__element
+              input(class="checkbox__input" type="checkbox" id="smoking")
+              label(class="checkbox__label" for="smoking")
+                .checkbox__arrow
+                .checkbox__default-text Можно курить
+            .checkbox__element
+              input(class="checkbox__input" type="checkbox" id="pets")
+              label(class="checkbox__label" for="pets")
+                .checkbox__arrow
+                .checkbox__default-text Можно с питомцами
+            .checkbox__element
+              input(class="checkbox__input" type="checkbox" id="guests")
+              label(class="checkbox__label" for="guests")
+                .checkbox__arrow
+                .checkbox__default-text Можно пригласить гостей <br> (до 10 человек)
+
+          .radio.checkbox-radio-field__radio
+            .radio__title.font-h3
+              span Radio Buttons
+            .radio__list
+              .radio__element
+                  input(class="radio__input" name="sex" type="radio" id="male" checked)
+                  label(class="radio__label" for="male") Мужчина
+              .radio__element
+                  input(class="radio__input" name="sex" type="radio" id="female")
+                  label(class="radio__label" for="female") Женщина
+
+          .toggle-button.checkbox-radio-field__toggle
+            .toggle-button__title.font-h3
+              span Toggle
+            .toggle-button__item.checkbox-radio-field__toggle-item
+              input(class="toggle-button__input" type="checkbox" id="specialOffer" checked)
+              label(class="toggle-button__label" for="specialOffer") Получать спецпредложения
+            .toggle-button__item
+              input(class="toggle-button__input" type="checkbox" id="specialOffer")
+              label(class="toggle-button__label" for="specialOffer") Получать спецпредложения
+
+          .like-buttons.checkbox-radio-field__like-buttons
+            .like-buttons__title.font-h3
+              span like button
+            .like-buttons__wrapper
+              .like.like_border-grey
+                .like__icon.icon.icon_light-grey.material-icons favorite_border
+                .like__count.like__count_grey 2
+              .like.like_border-gradient
+                .like__icon.icon.icon_purple.material-icons favorite
+                .like__count.like__count_purple 12
+
+          .rate
+            .rate__title.font-h3
+              span rate button
+            .rate__wrapper
+              .icon_purple-gradient.material-icons star
+              .icon_purple-gradient.material-icons star
+              .icon_purple-gradient.material-icons star
+              .icon_purple-gradient.material-icons star
+              .icon_purple-gradient.material-icons star_border
+            .rate__wrapper
+              .icon_purple-gradient.material-icons star
+              .icon_purple-gradient.material-icons star
+              .icon_purple-gradient.material-icons star
+              .icon_purple-gradient.material-icons star
+              .icon_purple-gradient.material-icons star
+
+        .button-field
+
+          .price-slider.button-field__price-slider
+            .price-slider__title.font-h3
+              span Price range:
+              span(class="price-slider__amount" id="amount")
+            .price-slider__range#sliderRangePrice
+
+          .buttons.button-field__buttons.form-field.form-field_width-320
+            .buttons__title.font-h3
+              span buttons
+            .button.buttons__position
+              span.button__text.font-h3 click me
+            .button.button_opacity.buttons__position
+              span.button__text.font-h3 click me
+            .button.button_border-gradient.buttons__position
+              span.button__text.button__text_purple.font-h3 click me
+            .button.button_border-gradient.button_opacity.buttons__position
+              span.button__text.button__text_purple.font-h3 click me
+            .button.button_only-text.buttons__position
+              span.button__text.button__text_purple.font-h3 click me
+            .button.button_only-text.buttons__position
+              span.button__text.button__text-dark.font-h3 click me
+            .button.button_wide
+              span.button__text.font-h3 перейти к оплате
+              span.icon.button__icon.icon_white.material-icons arrow_forward
+
+          .pagination
+            .pagination__title.font-h3
+              span pagination
+            .pagination__wrapper-buttons
+              .pagination__button.pagination__button_purple
+                span.icon.icon_white.font-h3 1
+              .pagination__button
+                span.icon.icon_grey.font-h3 2
+              .pagination__button
+                span.icon.icon_grey.font-h3 3
+              .pagination__button
+                span.icon.icon_grey.font-h3 ...
+              .pagination__button
+                span.icon.icon_grey.font-h3 15
+              .pagination__button.pagination__button_green
+                span.icon.icon_white.material-icons arrow_forward
+            .pagination__text 
+              span 1 – 12 из 100+ вариантов аренды
+
+      .form-elments__part2
+
+        .dropdown-list__part1
+          .dropdown.form-field_width-266.dropdown-list__dropdown-default
+            .form-field__label.font-h3
+              span Dropdown
+              span Default
+            .select
+              .select__header-default
+                span.select__current-default 2 спальни, 2 кровати, 0 ванные комнаты
+                .icon.icon_dark-grey.material-icons expand_more
+
+          .dropdown.form-field_width-266.dropdown-list__dropdown-expanded
+            .form-field__label.font-h3
+              span Dropdown
+              span expanded
+            .select.is-active
+              .select__header
+                span.select__current 2 спальни, 2 кровати, 0 ванные комнаты
+                .icon.icon_dark-grey.material-icons expand_more
+              .select__body
+                +selectItem({title: 'спальни', count: '2', option: 'bedroom', datatype: 'rooms'})
+                +selectItem({title: 'кровати', count: '2', option: 'bed', datatype: 'rooms'})
+                +selectItem({title: 'ванные комнаты', count: '0', option: 'bathroom', datatype: 'rooms'})
+                .select__actions.font-h3
+                  .select__clear очистить
+                  .select__apply применить
+
+          .checkbox.checkbox_expanded.dropdown-list__list-expanded
+            .checkbox__title.checkbox__title_expanded.font-h3
+              span expandable checkbox list
+              .icon.icon_grey.icon_expanded.material-icons expand_more
+            .checkbox__list
+              .checkbox__element
+                input(class="checkbox__input" type="checkbox" id="breakfast")
+                label(class="checkbox__label" for="breakfast")
+                  .checkbox__arrow
+                  .checkbox__default-text Завтрак
+              .checkbox__element
+                input(class="checkbox__input" type="checkbox" id="table")
+                label(class="checkbox__label" for="table")
+                  .checkbox__arrow
+                  .checkbox__default-text Письменный стол
+              .checkbox__element
+                input(class="checkbox__input" type="checkbox" id="babyChair")
+                label(class="checkbox__label" for="babyChair")
+                  .checkbox__arrow
+                  .checkbox__default-text Стул для кормления
+              .checkbox__element
+                input(class="checkbox__input" type="checkbox" id="babyBed")
+                label(class="checkbox__label" for="babyBed")
+                  .checkbox__arrow
+                  .checkbox__default-text Кроватка
+              .checkbox__element
+                input(class="checkbox__input" type="checkbox" id="tv")
+                label(class="checkbox__label" for="tv")
+                  .checkbox__arrow
+                  .checkbox__default-text Телевизор
+              .checkbox__element
+                input(class="checkbox__input" type="checkbox" id="shampoo")
+                label(class="checkbox__label" for="shampoo")
+                  .checkbox__arrow
+                  .checkbox__default-text Шампунь
+
+        .dropdown-list__part2
+          .form-field.form-field_width-320.input-field__dropdown-guest.dropdown-list__dropdown-expanded
+            .form-field__label.font-h3
+              span Dropdown
+            .select.is-active
+              .select__header
+                span.select__current Сколько гостей
+                .icon.icon_dark-grey.material-icons expand_more
+              .select__body
+                +selectItem({title: 'взрослые', count: '0', option: 'adult', datatype: 'guests'})
+                +selectItem({title: 'дети', count: '0', option: 'child', datatype: 'guests'})
+                +selectItem({title: 'младенцы', count: '0', option: 'infant', datatype: 'guests'})
+                .select__actions.font-h3
+                  .select__clear очистить
+                  .select__apply.is-active применить
+
+          .checkbox
+            .checkbox__title.checkbox__title_rich.font-h3
+              span rich Checkbox Buttons
+            .checkbox__element.checkbox__element_rich
+              input(class="checkbox__input" type="checkbox" id="availabilityWidth")
+              label(class="checkbox__label" for="availabilityWidth")
+                .checkbox__arrow
+                .checkbox__text Широкий коридор
+                .checkbox__description Ширина коридоров в номере не менее 91 см.
+            .checkbox__element
+              input(class="checkbox__input" type="checkbox", id="availability_help")
+              label(class="checkbox__label" for="availability_help") 
+                .checkbox__arrow
+                .checkbox__text Помощник для инвалидов
+                .checkbox__description На 1 этаже вас встретит специалист и проводит до номера.
+        
+        .dropdown-list__part3
+          .form-field.form-field_width-320.input-field__dropdown-guest.dropdown-list__dropdown-expanded
+            .form-field__label.font-h3
+              span Dropdown
+            .select.is-active
+              .select__header
+                span.select__current 3 гостя
+                .icon.icon_dark-grey.material-icons expand_more
+              .select__body
+                +selectItem({title: 'взрослые', count: '2', option: 'adult', datatype: 'guests'})
+                +selectItem({title: 'дети', count: '1', option: 'child', datatype: 'guests'})
+                +selectItem({title: 'младенцы', count: '0', option: 'infant', datatype: 'guests'})
+                .select__actions.font-h3
+                  .select__clear.is-active очистить
+                  .select__apply.is-active применить
+
+          .rules
+            .rules__title.font-h3 bullet list
+            ul.rules__list
+              li.rules__item Нельзя с питомцами
+              li.rules__item Без вечеринок и мероприятий
+              li.rules__item Время прибытия — после 13:00, а&nbspвыезд до 12:00
+
+      .form-elments__part3
+
+        .room-info.form-elments__room-info
+          .room-info__item.room-info__item-border
+            span.icon.icon_purple-gradient.icon_big.room-info__icon.material-icons insert_emoticon
+            .room-info__text
+              .room-info__title Комфорт
+              .room-info__description Шумопоглощающие стены
+          .room-info__item.room-info__item-border
+            span.icon.icon_purple-gradient.icon_big.room-info__icon.material-icons location_city
+            .room-info__text
+              .room-info__title Удобство
+              .room-info__description Окно в каждой из спален
+
+        .reviews.form-elments__reviews
+          .review
+            .review__person
+              .review__photo
+              .review__info
+                .review__name Мурад Сарафанов
+                .review__date 5 дней назад
+            .review__text-wrapper
+              .like.like_border-gradient.review__like.review__like_position
+                .like__icon.icon.icon_purple.material-icons favorite
+                .like__count.like__count_purple 12
+              .review__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.

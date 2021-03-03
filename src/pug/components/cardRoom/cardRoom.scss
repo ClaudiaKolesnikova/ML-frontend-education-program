@@ -1,0 +1,145 @@
+.card-room {
+  background: $white-color;
+  background: #ffffff;
+  box-shadow: 0px 10px 20px $dark-color-5;
+  border-radius: 4px;
+  max-width: 270px;
+  line-height: 0;
+}
+
+.card-room__photo {
+  position: relative;
+}
+
+.card-room__photo::before {
+  content: '';
+  display: none;
+  position: absolute;
+  width: 42px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 99.99%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.card-room__photo::after {
+  display: none;
+  content: '';
+  position: absolute;
+  width: 42px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 99.99%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.card-room__photo:hover .card-room__icon,
+.card-room__photo:hover.card-room__photo::before,
+.card-room__photo:hover.card-room__photo::after {
+  display: block;
+}
+
+.card-room__image {
+  max-width: 270px;
+  border-radius: 4px 4px 0 0;
+}
+
+.card-room__icon {
+  position: absolute;
+  top: calc(50% - 12px);
+  display: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.card-room__icon_left {
+  transform: rotate(90deg);
+  left: 10px;
+}
+
+.card-room__icon_right {
+  transform: rotate(-90deg);
+  right: 10px;
+}
+
+.card-room__more-photo {
+  display: flex;
+  justify-content: space-between;
+  max-width: 41.2px;
+  width: 100%;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: 1;
+}
+
+.card-room__round {
+  width: 7.5px;
+  height: 7.5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card-room__round_fill {
+  background: $white-color;
+  box-shadow: 0px 5px 5px $dark-color-30;
+}
+
+.card-room__round_border {
+  border: 1px solid $white-color;
+  filter: drop-shadow(0px 5px 5px $dark-color-30);
+}
+
+.card-room__info {
+  padding: 20px 17px 19px 20px;
+  line-height: 24px;
+}
+
+.card-room__title {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid $dark-color-10;
+  margin-bottom: 8px;
+  line-height: 18px;
+}
+
+.card-room__number {
+  font-weight: bold;
+  line-height: 17px;
+  color: $dark-color-100;
+}
+
+.card-room__type {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $purple-color;
+}
+.card-room__price-per-day {
+  margin-left: auto;
+  color: $dark-color-50;
+}
+
+.card-info__rate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 0;
+}
+
+.card-info__review {
+  color: $dark-color-50;
+}

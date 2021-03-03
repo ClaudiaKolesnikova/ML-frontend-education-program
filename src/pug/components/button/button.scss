@@ -1,5 +1,4 @@
 .button {
-  padding: 14px 20px 15px 20px;
   background: $gradient-purple;
   border-radius: 22px;
   display: inline-flex;
@@ -8,6 +7,10 @@
   line-height: 15px;
   position: relative;
   cursor: pointer;
+  max-width: 99px;
+  width: 100%;
+  padding-top: 14px;
+  padding-bottom: 15px;
 }
 
 .button_border-gradient {
@@ -57,6 +60,7 @@
 
 .button_wide {
   display: flex;
+  max-width: 320px;
 }
 
 .button_narrow {

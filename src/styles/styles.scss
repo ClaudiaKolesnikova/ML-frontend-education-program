@@ -23,6 +23,11 @@
 @import '../pug/components/footer/footer.scss';
 @import '../pug/components/rangePriceSlider/rangePriceSlider.scss';
 @import '../pug/components/uiKitLogo/uiKitLogo.scss';
+@import '../pug/components/cardFindRoom/cardFindRoom.scss';
+@import '../pug/components/cardRegistration/cardRegistration.scss';
+@import '../pug/components/cardEntrence/cardEntrence.scss';
+@import '../pug/components/cardRoomReservation/cardRoomReservation.scss';
+@import '../pug/components/cardRoom/cardRoom.scss';
 
 * {
   box-sizing: border-box;
@@ -35,6 +40,25 @@ body {
   font-size: 14px;
   line-height: 24px;
   color: $dark-color-75;
+}
+
+.ui-kit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 150px auto;
+}
+.ui-kit__title {
+  margin-bottom: 50px;
+}
+.ui-kit__links {
+  display: flex;
+  flex-direction: column;
+}
+.ui-kit__link {
+  text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .container {
@@ -224,6 +248,7 @@ body {
 
   .rate__wrapper {
     display: inline-block;
+    line-height: 0;
   }
 
   .rate__wrapper:nth-of-type(2) {
@@ -261,4 +286,32 @@ body {
 
 .example-invisible {
   display: none;
+}
+
+.cards {
+  padding: 150px 140px 140px 140px;
+  display: flex;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.cards__element {
+  margin-bottom: 40px;
+  width: 380px;
+}
+
+.cards__block1,
+.cards__block2,
+.cards__block3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards__block1,
+.cards__block2 {
+  margin-right: 40px;
+}
+
+.cards__block3 {
+  margin-top: 411px;
 }
